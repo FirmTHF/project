@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ระบบสั่งอาหาร</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>🍴 ระบบสั่งอาหารออนไลน์</h2>
+  <div>
+    <button onclick="showHome()">ร้านอาหาร</button>
+    <button onclick="showHistory()">ประวัติ</button>
+    <button onclick="showCart()">ตะกร้า (<span id="cart-count">0</span>)</button>
+  </div>
+</header>
+
+<!-- เมนูแนะนำ -->
+<section class="recommend">
+  <h3>เมนูแนะนำ</h3>
+
+  <div class="slider">
+    <button onclick="prevSlide()">❮</button>
+
+    <div class="slide-box">
+      <img id="slide-img">
+      <h2 id="slide-name"></h2>
+      <p id="slide-desc"></p>
+      <h3 id="slide-price"></h3>
+      <button onclick="addSlideToCart()">เพิ่มลงตะกร้า</button>
+    </div>
+
+    <button onclick="nextSlide()">❯</button>
+  </div>
+</section>
+
+<!-- ร้านอาหาร -->
+<section id="shops">
+  <h2>ร้านอาหาร</h2>
+
+  <div class="shop-grid">
+
+    <div class="shop-card" onclick="openShop('thai')">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5">
+      <h3>ร้านอาหารไทยแท้</h3>
+    </div>
+
+    <div class="shop-card" onclick="openShop('somtam')">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+      <h3>ส้มตำป้าแดง</h3>
+    </div>
+
+    <div class="shop-card" onclick="openShop('noodle')">
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+      <h3>ก๋วยเตี๋ยวเรือลุงเจ๋ง</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- เมนูร้าน -->
+<section id="menu" class="hidden">
+  <button onclick="showHome()">⬅ กลับ</button>
+  <h2>เมนูร้าน</h2>
+  <div id="menu-items" class="menu-grid"></div>
+</section>
+
+<!-- ตะกร้า -->
+<section id="cart" class="hidden">
+  <button onclick="showHome()">⬅ กลับ</button>
+  <h2>ตะกร้า</h2>
+  <ul id="cart-items"></ul>
+  <h3 id="total"></h3>
+  <button onclick="checkout()">สั่งซื้อ</button>
+</section>
+
+<!-- ประวัติ -->
+<section id="history" class="hidden">
+  <button onclick="showHome()">⬅ กลับ</button>
+  <h2>ประวัติการสั่ง</h2>
+  <ul id="history-list"></ul>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

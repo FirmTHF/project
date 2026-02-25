@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    
+  <meta charset="UTF-8">
+  <title>ระบบสั่งอาหารออนไลน์</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>🍽 ระบบสั่งอาหารออนไลน์</h2>
+  <nav class="navbar">
+  <div class="nav-left">
+    <div class="logo">
+      🛒
+    </div>
+    <span class="brand">Food Ordering</span>
+  </div>
+
+  <div class="nav-center">
+    <a href="#" class="active">🏠 หน้าหลัก</a>
+    <a href="#">🕘 ประวัติคำสั่งซื้อ</a>
+  </div>
+
+  <div class="nav-right">
+    <span class="cart">🛒</span>
+    <span class="user">👤 สมชาย ใจดี</span>
+    <button class="logout">ออกจากระบบ</button>
+  </div>
+</nav>
+</header>
+
+<!-- ⭐ ร้านแนะนำ -->
+<section class="recommend">
+  <h3>⭐ ร้านแนะนำ</h3>
+
+  <div class="slider">
+
+    <button class="nav prev" onclick="prevSlide()">❮</button>
+
+    <div class="slide" id="slide"></div>
+
+    <button class="nav next" onclick="nextSlide()">❯</button>
+
+  </div>
+</section>
+
+<!-- ร้านอาหารทั้งหมด -->
+<section>
+  <h3>ร้านอาหาร</h3>
+  <div class="restaurant-list" id="restaurantList"></div>
+</section>
+
+<!-- หน้าเมนู -->
+<section id="menuPage" class="hidden">
+  <button onclick="goHome()">⬅ กลับหน้าร้าน</button>
+  <h3 id="menuTitle"></h3>
+  <div class="menu-list" id="menuList"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
