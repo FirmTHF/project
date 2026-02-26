@@ -22,7 +22,8 @@ const restaurants = [
     img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836",
     address:"ระยอง",
     menu:[
-      {name:"ก๋วยเตี๋ยวเรือ",price:50,img:"https://images.unsplash.com/photo-1604908177050-9e7d1c1f3f9b"}
+      {name:"ก๋วยเตี๋ยวเรือ",price:50,img:"https://images.unsplash.com/photo-1604908177050-9e7d1c1f3f9b"},
+      {name:"เกาเหลา",price:60,img:"https://images.unsplash.com/photo-1605478371313-bdb0a4fddc1b"}
     ]
   },
   {
@@ -30,7 +31,8 @@ const restaurants = [
     img:"https://images.unsplash.com/photo-1553621042-f6e147245754",
     address:"กรุงเทพ",
     menu:[
-      {name:"ซูชิ",price:180,img:"https://images.unsplash.com/photo-1562158070-622a52b1b3e4"}
+      {name:"ซูชิ",price:180,img:"https://images.unsplash.com/photo-1562158070-622a52b1b3e4"},
+      {name:"ราเมง",price:150,img:"https://images.unsplash.com/photo-1604908554027-bb9dbb3dfcc3"}
     ]
   },
   {
@@ -38,15 +40,8 @@ const restaurants = [
     img:"https://images.unsplash.com/photo-1544025162-d76694265947",
     address:"ชลบุรี",
     menu:[
-      {name:"สเต็กเนื้อ",price:250,img:"https://images.unsplash.com/photo-1558036117-15d82a90b9b1"}
-    ]
-  },
-  {
-    name:"ร้านข้าวมันไก่",
-    img:"https://images.unsplash.com/photo-1604908812580-0b0b1b1c3c1c",
-    address:"พัทยา",
-    menu:[
-      {name:"ข้าวมันไก่",price:60,img:"https://images.unsplash.com/photo-1604908177021-3c9c8f60a7a3"}
+      {name:"สเต็กเนื้อ",price:250,img:"https://images.unsplash.com/photo-1558036117-15d82a90b9b1"},
+      {name:"สเต็กไก่",price:180,img:"https://images.unsplash.com/photo-1600891964599-f61ba0e24092"}
     ]
   }
 ];
@@ -91,8 +86,8 @@ function loadRestaurants(){
 }
 
 function openMenu(index){
+  document.getElementById("homeSection").classList.add("hidden");
   document.getElementById("menuPage").classList.remove("hidden");
-  document.querySelector(".restaurant-list").classList.add("hidden");
 
   const r = restaurants[index];
   document.getElementById("menuTitle").innerText = r.name;
@@ -107,7 +102,7 @@ function openMenu(index){
         <div>
           <h4>${m.name}</h4>
           <p>฿${m.price}</p>
-          <button onclick="alert('เพิ่มลงตะกร้าแล้ว')">เพิ่มลงตะกร้า</button>
+          <button onclick="addToCart()">เพิ่มลงตะกร้า</button>
         </div>
       </div>
     `;
@@ -116,7 +111,11 @@ function openMenu(index){
 
 function goHome(){
   document.getElementById("menuPage").classList.add("hidden");
-  document.querySelector(".restaurant-list").classList.remove("hidden");
+  document.getElementById("homeSection").classList.remove("hidden");
+}
+
+function addToCart(){
+  alert("เพิ่มลงตะกร้าแล้ว");
 }
 
 showSlide();
